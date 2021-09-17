@@ -1,0 +1,258 @@
+﻿<!DOCTYPE html>
+
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Ohmyfood</title>
+</head>
+<body>
+    <header class="header__menu">
+        <div class="header__menu__retour">
+            <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="header__menu__logo">
+            <img class="header__formulaire__logo" src="public/img/logo/ohmyfood.png" alt="Ohmyfood" />
+        </div>
+    </header>
+
+    <main id="main_menu">
+        <div id="aside_menu" class="aside_desktop">
+            <section class="localisation">
+            <input class="localisation__recherche" id="adresse" type="text" name="Ville_recherchee" placeholder="Paris, Belleville" />
+            <button class="localisation__button" id="adresse__recherche" name="recherche" type="submit"><i class="fas fa-map-marker-alt"></i></button>
+            </section>
+            <section class="entreprise">
+                <div class="entreprise__presentation">
+                    <h2>Réservez le menu qui vous convient</h2>
+                    <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
+                    <button id="presentation__button" name="restaurant_explorer">Explorer nos restaurants</button>
+                </div>
+                <div class="entreprise__fonctionnement">
+                    <h2>Fonctionnement</h2>
+                    <ol>
+                        <li><i class="fas fa-mobile-alt"></i><span>Choisissez un restaurant</span></li>
+                        <li><i class="fas fa-list-ul"></i><span>Composez votre menu</span></li>
+                        <li><i class="fas fa-store"></i><span>Dégustez au restaurant</span></li>
+                    </ol>
+                </div>
+            </section>
+        </div>
+        <div class="menu">
+            <img  src="public/img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="Le délice des sens" />
+            <div class="menu__entete">
+                <h1 class="menu__entete__titre">Le délice des sens</h1>
+                <p>
+                    <label class="menu__entete__label">
+                        <input class="menu__entete__checkbox" type="checkbox" />
+                        <i class="far fa-heart"></i>
+                        <i class="fas fa-heart"></i>
+                    </label>
+                </p>
+            </div>
+            <div id="menu_le_delice_des_sens"class="menu__formulaire">
+                <form method="post" action="validation_menu.php">
+
+                    <fieldset>
+                        Entrées
+                        <hr />
+                        <div class="contener_label">
+                            <label>
+                                <input class="menu__formulaire__input" type="checkbox" name="plat_choisi" />
+                                <span class="menu__formulaire__detail">
+                                    <span class="menu__formulaire__detail__texte">
+                                        <b>Tartare de thon</b>
+                                    </span>
+                                    <span class="menu__formulaire__detail__texte">
+                                        Assaisonné au yuzu
+                                    </span>
+                                </span>
+                                <span class="menu__formulaire__prix">
+                                    25€
+                                </span>
+                                <span class="menu__formulaire__icone">
+                                    <i class="fas fa-check-circle fa-rotate-180"></i>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="contener_label">
+                            <label>
+                                <input class="menu__formulaire__input" type="checkbox" name="plat_choisi" />
+                                <span class="menu__formulaire__detail">
+                                    <span class="menu__formulaire__detail__texte">
+                                        <b>Bouchée de homard croustillant</b>
+                                    </span>
+                                    <span class="menu__formulaire__detail__texte">
+                                        Et sa farandole de petits légumes
+                                    </span>
+                                </span>
+                                <span class="menu__formulaire__prix">
+                                    35€
+                                </span>
+                                <span class="menu__formulaire__icone">
+                                    <i class="fas fa-check-circle fa-rotate-180"></i>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="contener_label">
+                            <label>
+                                <input class="menu__formulaire__input" type="checkbox" name="plat_choisi" />
+                                <span class="menu__formulaire__detail">
+                                    <span class="menu__formulaire__detail__texte">
+                                        <b>Velouté de cépes</b>
+                                    </span>
+                                    <span class="menu__formulaire__detail__texte">
+                                        Aux truffes
+                                    </span>
+                                </span>
+                                <span class="menu__formulaire__prix">
+                                    20€
+                                </span>
+                                <span class="menu__formulaire__icone">
+                                    <i class="fas fa-check-circle fa-rotate-180"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        Plats
+                        <hr />
+                        <div class="contener_label">
+                            <label>
+                                <input class="menu__formulaire__input" type="checkbox" name="plat_choisi" />
+                                <span class="menu__formulaire__detail">
+                                    <span class="menu__formulaire__detail__texte">
+                                        <b>Poulet rôti aux herbes de Provence</b>
+                                    </span>
+                                    <span class="menu__formulaire__detail__texte">
+                                        Et sa créme de truffe
+                                    </span>
+                                </span>
+                                <span class="menu__formulaire__prix">
+                                    40€
+                                </span>
+                                <span class="menu__formulaire__icone">
+                                    <i class="fas fa-check-circle fa-rotate-180"></i>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="contener_label">
+                            <label>
+                                <input class="menu__formulaire__input" type="checkbox" name="plat_choisi" />
+                                <span class="menu__formulaire__detail">
+                                    <span class="menu__formulaire__detail__texte">
+                                        <b>Langouste rôtie</b>
+                                    </span>
+                                    <span class="menu__formulaire__detail__texte">
+                                        Et ses légumes de saison
+                                    </span>
+                                </span>
+                                <span class="menu__formulaire__prix">
+                                    35€
+                                </span>
+                                <span class="menu__formulaire__icone">
+                                    <i class="fas fa-check-circle fa-rotate-180"></i>
+                                </span>                              
+                            </label>
+                        </div>
+                        <div class="contener_label">
+                            <label>
+                                <input class="menu__formulaire__input" type="checkbox" name="plat_choisi" />
+                                <span class="menu__formulaire__detail">
+                                    <span class="menu__formulaire__detail__texte">
+                                        <b>Côte de boeuf Angus</b>
+                                    </span>
+                                    <span class="menu__formulaire__detail__texte">
+                                        Et sa purée de panais
+                                    </span>
+                                </span>
+                                <span class="menu__formulaire__prix">
+                                    44€
+                                </span>
+                                <span class="menu__formulaire__icone">
+                                    <i class="fas fa-check-circle fa-rotate-180"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <fieldset>
+                        Desserts
+                        <hr />
+                        <div class="contener_label">
+                            <label>
+                                <input class="menu__formulaire__input" type="checkbox" name="plat_choisi" />
+                                <span class="menu__formulaire__detail">
+                                    <span class="menu__formulaire__detail__texte">
+                                        <b>Farandole de desserts</b>
+                                    </span>
+                                    <span class="menu__formulaire__detail__texte">
+                                        Du chef
+                                    </span>
+                                </span>
+                                <span class="menu__formulaire__prix">
+                                    18€
+                                </span>
+                                <span class="menu__formulaire__icone">
+                                    <i class="fas fa-check-circle fa-rotate-180"></i>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="contener_label">
+                            <label>
+                                <input class="menu__formulaire__input" type="checkbox" name="plat_choisi" />
+                                <span class="menu__formulaire__detail">
+                                    <span class="menu__formulaire__detail__texte">
+                                        <b>Créme brulée</b>
+                                    </span>
+                                    <span class="menu__formulaire__detail__texte">
+                                        Revisité
+                                    </span>
+                                </span>
+                                <span class="menu__formulaire__prix">
+                                    22€
+                                </span>
+                                <span class="menu__formulaire__icone">
+                                    <i class="fas fa-check-circle fa-rotate-180"></i>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="contener_label">
+                            <label>
+                                <input class="menu__formulaire__input" type="checkbox" name="plat_choisi" />
+                                <span class="menu__formulaire__detail">
+                                    <span class="menu__formulaire__detail__texte">
+                                        <b>Tiramisu</b>
+                                    </span>
+                                    <span class="menu__formulaire__detail__texte">
+                                        A la noisette
+                                    </span>
+                                </span>
+                                <span class="menu__formulaire__prix">
+                                    23€
+                                </span>
+                                <span class="menu__formulaire__icone">
+                                    <i class="fas fa-check-circle fa-rotate-180"></i>
+                                </span>
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="validation_commande">
+                        <button id="button_commander" name="commander" type="submit">Commander</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <h1>ohmyfood</h1>
+        <p><a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a></p>
+        <p><a href="contact.html"><i class="fas fa-hands-helping"></i>Devenir partenaire</a></p>
+        <p><a href="mailto:ohmyfood@manger.fr">Contact</a></p>
+        <p><a href="">Mentions légales</a></p>
+    </footer>
+</body>
+
+</html>

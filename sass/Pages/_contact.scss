@@ -1,0 +1,188 @@
+#body_contact {
+    background-image: $background-radiant-contact;
+
+    #main_contact {
+        @include media-min("tablette") {
+            background-image: $background-radiant-contact;
+            width: 100%;
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+    }
+
+
+    .contact {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        padding: 1.6em;
+        background-image: $background-radiant-contact;
+
+
+        @include media-min("tablette") {
+            padding: 0px;
+        }
+
+        @include media-min("tablette-down") {
+            justify-content: space-around;
+        }
+
+        &__icon {
+            display: none;
+
+            @include media-min("tablette-down") {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                width: 28%;
+            }
+
+            i {
+                @include media-min("tablette-down") {
+                    font-size: 12em;
+                    background: -moz-linear-gradient(top, $tretiary-color 0%, $background-color 100%);
+                    background: -webkit-linear-gradient(top, $tretiary-color 0%,$background-color 100%);
+                    background: linear-gradient(to bottom, $tretiary-color 0%,$background-color 100%);
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+
+
+        &__form {
+            display: flex;
+            flex-direction: column;
+            background-color: white;
+            text-align: center;
+            align-items: center;
+            padding-bottom: 2em;
+            flex: 1;
+            border-radius: 25px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+            @include media-min("tablette") {
+                flex: none;
+                width: 70%;
+            }
+
+            @include media-min("tablette-down") {
+                width: 50%;
+            }
+
+
+            > div {
+                font-family: 'Shrikhand';
+                flex-grow: 1;
+                width: 80%;
+                font-size: 1.5em;
+
+                @include media-min("tablette") {
+                    width: 80%;
+                }
+            }
+
+            h1 {
+                font-family: 'Shrikhand';
+                font-size: 1.4em;
+                border-bottom: 4px solid $tretiary-color;
+                width: 100%;
+                margin: 0px;
+                margin-bottom: 1em;
+                padding: 1.3em 0em 1em 0em;
+                border-radius: 25px 25px 0px 0px;
+            }
+
+            &__label {
+                display: inline-flex;
+                flex-direction: column;
+                margin-bottom: 1.2em;
+                padding-left: 2em;
+
+
+
+                label {
+                    text-align: left;
+                    font-size: 0.8em;
+
+                    @include media-min("tablette-down") {
+                        font-size: 0.75em;
+                    }
+
+                    i {
+                        color: $tretiary-color;
+                        padding-right: 0.5em;
+                    }
+                }
+            }
+
+            > div {
+                input {
+                    width: 80%;
+                    padding: 0.3em 0em 0.3em 0.5em;
+                    border: 2px solid #FCFCF8;
+                    border-radius: 15px;
+                    box-shadow: $tretiary-color 0px 5px 15px;
+                    min-height: 25px;
+
+
+                    @include media-min("tablette") {
+                        height: 50px;
+                        font-size: 0.75em;
+                    }
+                }
+
+
+                textarea {
+                    width: 80%;
+                    padding: 0.3em 0em 0.3em 0.5em;
+                    border: 2px solid #FCFCF8;
+                    border-radius: 15px;
+                    box-shadow: $tretiary-color 0px 5px 15px;
+                    min-height: 90px;
+
+                    @include media-min("tablette") {
+                        height: 50px;
+                        font-size: 0.75em;
+                        min-height: 150px;
+                    }
+                }
+
+                input:focus {
+                    background-color: lighten($primary-color,35%);
+                }
+
+                textarea:focus {
+                    background-color: lighten($primary-color,35%);
+                }
+            }
+
+
+            .validation_formulaire {
+                width: 40%;
+                padding: 0.6em;
+                margin-top: 1em;
+                height: 15%;
+            }
+        }
+    }
+
+    #footer_contact {
+
+        @include media-min("tablette") {
+            margin-left: 0px;
+            padding: 0em 0em 1em 0em;
+
+            h1, p {
+                margin: 0px;
+                padding: 0.5em 0em 0.5em 1em;
+            }
+        }
+
+        @include media-min-lanscape("tablette",landscape) {
+            justify-content: flex-start;
+        }
+    }
+}

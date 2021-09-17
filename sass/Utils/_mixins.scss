@@ -1,0 +1,64 @@
+@mixin ajout-favori {
+    font-size: 1.8em;
+    cursor: pointer;
+
+
+    input[type="checkbox"],i.fas.fa-heart {
+        display: none;
+    }
+
+    input[type="checkbox"]:checked ~ i.fas.fa-heart {
+        display: inline-block;
+        transform: scale(1.1);
+        animation: fondu 2s forwards;
+        background: $background-radiant-button;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    input[type="checkbox"]:checked ~ i.far.fa-heart {
+        display: none;
+    }
+}
+
+@mixin ajout-plat {
+    formulaire {
+        label:hover {
+            &__icone {
+                i {
+                    display: inline-block;
+                }
+            }
+        }
+    }
+}
+
+
+/* media avec min-width */
+@mixin media-min($_key) {
+    @media screen and (min-width: map-get($breakpoints, $_key)) {
+        & {
+            @content;
+        }
+    }
+}
+
+
+/* media avec min-width et max-width  */
+@mixin media-between($_keymin, $_keymax) {
+    @media screen and (min-width: map-get($breakpoints, $_keymin)) and (max-width: map-get($breakpoints, $_keymax) - 1) {
+        & {
+            @content;
+        }
+    }
+}
+
+
+/*lanscape*/
+@mixin media-min-lanscape($_key,$orientation) {
+    @media screen and (min-width: map-get($breakpoints, $_key)) and (orientation:$orientation) {
+        & {
+            @content;
+        }
+    }
+}

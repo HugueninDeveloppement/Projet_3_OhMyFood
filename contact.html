@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css" />
+    <link rel="stylesheet" href="public/css/style.css">
+    <title>Ohmyfood</title>
+</head>
+<body id="body_contact">
+    <header class="header__menu">
+        <div class="header__menu__retour">
+            <a href="index.html"><i class="fas fa-arrow-left"></i></a>
+        </div>
+        <div class="header__menu__logo">
+            <img class="header__formulaire__logo" src="public/img/logo/ohmyfood.png" alt="Ohmyfood" />
+        </div>
+    </header>
+
+    <main id="main_contact" class="contact">
+        <div class="contact__icon"><i class="fas fa-mail-bulk"></i></div>
+        <form class="contact__form">
+            <h1 class="contact__form__header">Devenir partenaire</h1>
+            <div class="contact__form__label">
+                <label for="contact-name"><i class="fas fa-hotel"></i>nom du restaurant</label>
+                <input type="text" name="contact-name" id="contact-name" autocomplete="name" placeholder="saisissez le nom de votre établissement">
+            </div>
+            <div class="contact__form__label">
+                <label for="contact-email"><i class="fas fa-at"></i>email</label>
+                <input type="email" name="contact-email" id="contact-email" autocomplete="email" placeholder="exemple@email.com">
+            </div>
+            <div class="contact__form__label">
+                <label class="message" for="contact-message"><i class="fas fa-envelope-open-text"></i>Présentation</label>
+                <textarea name="contact-message" id="contact-message" placeholder="500 caractères maxi"></textarea>
+            </div>
+            <button class="validation_formulaire">Envoyer</button>
+        </form>
+    </main>
+
+    <footer id="footer_contact">
+        <h1>ohmyfood</h1>
+        <p><a href=""><i class="fas fa-utensils"></i>Proposer un restaurant</a></p>
+        <p><a href="mailto:ohmyfood@manger.fr">Contact</a></p>
+        <p><a href="">Mentions légales</a></p>
+    </footer>
+</body>
+
+</html>

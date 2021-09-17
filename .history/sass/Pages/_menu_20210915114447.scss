@@ -1,0 +1,354 @@
+#aside_menu {
+    display: none;
+
+    @include media-min("tablette") {
+        display: block;
+        background-color: transparent;
+    }
+
+    @include media-min-lanscape("tablette",landscape) {
+        background-color: white;
+    }
+
+
+
+    .entreprise__fonctionnement {
+        @include media-min("tablette") {
+            font-size: 0.8em;
+
+            h1 {
+                font-size: 1.65em;
+            }
+
+            ol {
+                font-size: 1.15em;
+
+                li {
+                    margin-bottom: 1em;
+                }
+            }
+        }
+    }
+}
+
+
+.menu {
+    position: relative;
+    z-index: 1;
+    background: $background-color-light;
+
+    @include media-min("tablette") {
+        width: 60%;
+        margin-left: 40.5%;
+        padding-top: 0px;
+        font-size: 0.75em;
+    }
+
+
+    @include media-min-lanscape("tablette",landscape) {
+        margin-left: 0%;
+        width: 60%;
+    }
+
+    @include media-min("ecran-large") {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+
+    > img {
+        height: 260px;
+        width: 100%;
+
+        @include media-min("tablette") {
+            height: 300px;
+        }
+
+        @include media-min("ecran-large") {
+            display: none;
+        }
+    }
+
+    &__entete {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2.2em 2em 1em 1.9em;
+        border-radius: 25px 25px 0px 0px;
+        background: $background-color-light;
+        position: relative;
+        top: -35px;
+        z-index: 2;
+
+        @include media-min("ecran-large") {
+            top: 0px;
+            padding: 0em 2.8em 0em 2.8em;
+        }
+
+        &__titre {
+            font-size: 1.4em;
+        }
+
+        &__label {
+            @include ajout-favori ;
+            :hover ~ #checked {
+                display: inline-block;
+                transform: scale(1.1);
+                animation: fondu 2s forwards;
+                background: $background-radiant-button;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+
+            :hover ~ #unchecked {
+                display: none;
+            }
+        }
+    }
+
+    #menu_a_la_francaise {
+        @include media-min("ecran-large") {
+            top: 0px;
+            background-image: url(../img/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg);
+            background-size: cover;
+        }
+    }
+
+    #menu_la_note_enchantee {
+        @include media-min("ecran-large") {
+            top: 0px;
+            background-image: url(../img/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg);
+            background-size: cover;
+        }
+    }
+
+    #menu_la_palette_du_gout {
+        @include media-min("ecran-large") {
+            top: 0px;
+            background-image: url(../img/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg);
+            background-size: cover;
+        }
+    }
+
+    #menu_le_delice_des_sens {
+        @include media-min("ecran-large") {
+            top: 0px;
+            background-image: url(../img/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg);
+            background-size: cover;
+        }
+    }
+
+
+    &__formulaire {
+        padding: 1em;
+        background-color: $background-color-light;
+        position: relative;
+        top: -35px;
+        flex: 1;
+
+
+        form {
+            @include media-min("ecran-large") {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                height: 100%;
+            }
+
+
+            fieldset {
+                border: none;
+                display: flex;
+                flex-direction: column;
+                text-transform: uppercase;
+                margin: auto;
+                opacity: 0;
+                animation: affichageRalenti ease-in-out 2.15s forwards;
+
+                @include media-min("ecran-large") {
+                    width: 42%;
+                    color: white;
+                    text-shadow: 1px 0px 1px $tretiary-color, 0px 1px 1px black, 2px 1px 1px $tretiary-color, 1px 2px 1px black, 3px 2px 1px $tretiary-color, 2px 3px 1px black;
+                }
+
+
+                @include media-min("ecran-xxlarge") {
+                    width: 29%;
+                }
+
+
+
+                hr {
+                    width: 10%;
+                    background: $tretiary-color;
+                    border: none;
+                    height: 2px;
+                    margin-left: 0em;
+
+                    @include media-min("ecran-large") {
+                        width: 25%;
+                    }
+                }
+
+                .contener_label {
+                    width: 100%;
+                    height: 80px;
+                    display: flex;
+                    justify-content: center;
+                    margin-bottom: 0.6em;
+                    color: black;
+
+                    @include media-min("ecran-large") {
+                        margin-bottom: 1.6em;
+                        text-shadow: none;
+                    }
+
+                    label {
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        align-items: stretch;
+                        text-transform: none;
+                        background-color: white;
+                        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                        border-radius: 10px;
+
+                        .menu__formulaire__input {
+                            display: none;
+                        }
+
+                        .menu__formulaire__detail {
+                            width: 80%;
+                            max-width: 12em;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: center;
+                            transition: width 2s ease-out;
+
+                            @media (max-width: 400px) {
+                                max-width: 14.5em;
+                            }
+
+                            @media (min-width: 400px) and (max-width: 600px) {
+                                max-width: 18em;
+                            }
+
+                            @media (orientation: landscape) {
+                                min-width: 72%;
+                            }
+
+                            @media (min-width: 768px) and (max-width:1023px) {
+                                max-width: 18em;
+                                font-size: 0.85em;
+                            }
+
+                            @media (min-width: 1024px) {
+                                max-width: 21em;
+                                font-size: 0.85em;
+                            }
+
+                            @media (orientation: landscape) and (min-width: 1100px) {
+                                span:nth-child(2n) {
+                                    font-size: 1em;
+                                }
+                            }
+                        }
+
+                        .menu__formulaire__detail__texte {
+                            font-size: 1.2em;
+                            margin: auto 0px auto 0.4em;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
+                        }
+
+                        .menu__formulaire__prix {
+                            flex: 1;
+                            margin-bottom: 0.8em;
+                            text-align: center;
+                            font-weight: 900;
+                            align-self: flex-end;
+                            transition: width 2s ease-out;
+                        }
+
+                        .menu__formulaire__icone {
+                            height: 100%;
+                            width: 0%;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            border-radius: 0px 10px 10px 0px;
+                            overflow: hidden;
+                            background-color: aquamarine;
+                            transition: width 2s ease-out;
+                        }
+
+                        .menu__formulaire__icone i {
+                            color: white;
+                            transform: rotate(0deg);
+                            transition: transform 2s ease-in-out 500ms;
+                        }
+
+
+                        .menu__formulaire__input:checked ~ label {
+                            justify-content: space-between;
+                        }
+
+                        .menu__formulaire__input:checked ~ .menu__formulaire__icone {
+                            width: 25%;
+                        }
+
+                        .menu__formulaire__input:checked ~ .menu__formulaire__icone i {
+                            transform: rotate(-360deg);
+                        }
+
+
+
+                        .menu__formulaire__input:checked ~ .menu__formulaire__detail {
+                            width: 65%;
+                        }
+
+                        .menu__formulaire__input:checked ~ label .menu__formulaire__prix {
+                            max-width: 4em;
+                        }
+                    }
+                }
+            }
+
+            fieldset:nth-child(2) {
+                animation-delay: 0.75s;
+            }
+
+            fieldset:nth-child(3) {
+                animation-delay: 1.5s;
+            }
+
+            .validation_commande {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                font-size: 1.1em;
+                align-content: center;
+                margin-bottom: 1em;
+
+                @include media-min-lanscape("ecran-large",landscape) {
+                    width: 100%;
+                }
+
+                #button_commander {
+                    margin: auto;
+
+                    @include media-min-lanscape("ecran-xlarge",landscape) {
+                        width: 15%;
+                        height: 45px;
+                        padding: 0em;
+                    }
+                }
+            }
+        }
+    }
+}

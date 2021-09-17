@@ -1,0 +1,24 @@
+.validation_formulaire, #presentation__button, #button_commander {
+    width: 60%;
+    font-size: 0.9em;
+    align-self: center;
+    padding: 1.3em 0.3em 1.3em 0.3em;
+    background: $background-radiant-button;
+    box-shadow: 0px 0px 6px 6px #f2f2f2;
+    border: none;
+    transform: scale(1);
+    border-radius: 35px;
+    color: white;
+    margin-top: 0.8em;
+
+    @include media-min("tablette") {
+        padding: 1.4em;
+    }
+}
+
+
+
+.validation_formulaire:hover, #presentation__button:hover, #button_commander:hover {
+    transform: scale(1.1);
+    box-shadow: 0px 0px 9px 9px #f2f2f2;
+}

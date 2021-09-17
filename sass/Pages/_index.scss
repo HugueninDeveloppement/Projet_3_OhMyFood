@@ -1,0 +1,481 @@
+body {
+    position: relative;
+
+    .body__spinner {
+        opacity: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: lighten($tretiary-color,10%);
+        position: absolute;
+        top: 0;
+        left: 0px;
+        width: 100%;
+        height: 100vh;
+        z-index: 4;
+        animation: spinnerloading linear 3s forwards;
+
+        span {
+            display: inline-block;
+            background-color: $primary-color;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            margin: 0 8px;
+            transform: translate3d(0,0,0);
+            animation: rebonds 0.6s 6 alternate;
+        }
+
+
+        span:nth-child(2) {
+            background-color: $secondary-color;
+            animation-delay: 0.75s;
+        }
+    }
+}
+
+
+
+main {
+
+    @include media-min("tablette") {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+    }
+
+    .aside_desktop {
+
+        @include media-min-lanscape("petite-tablette",landscape) {
+            position: relative;
+        }
+
+        @include media-min("tablette") {
+            width: 40.5%;
+            background-color: $background-color;
+            position: fixed;
+        }
+
+        @include media-min-lanscape("tablette",landscape) {
+            position: relative;
+            background-color: white;
+        }
+
+        @include media-min("tablette-down") {
+            position: relative;
+            width: 25%;
+            font-size: 0.8em;
+        }
+
+        .localisation {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: stretch;
+            width: 100%;
+            background-color: #f2f2f2;
+            height: 50px;
+
+            @include media-min("tablette-down") {
+                height: 100px;
+                justify-content: space-evenly;
+            }
+
+            &__recherche {
+                border: none;
+                width: 60%;
+                background-color: #f2f2f2;
+
+
+                @include media-min("tablette") {
+                    font-size: 1.2em;
+                    padding-top: 0.3em;
+                    width: 70%;
+                }
+            }
+
+            &__button {
+                border: none;
+                width: 25%;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
+                background-color: #f2f2f2;
+
+                @include media-min("tablette") {
+                    justify-content: flex-start;
+                    width: 12%;
+                }
+
+                i {
+                    @include media-min("tablette") {
+                        font-size: 2.5em;
+                    }
+                }
+            }
+        }
+
+        .entreprise {
+
+            @include media-min("tablette") {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                font-size: 0.75em;
+            }
+
+
+            &__presentation {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                padding: 1em 1.2em 2em 1.2em;
+                background-image: $background-radiant-boby;
+
+                @include media-min("tablette") {
+                    padding: 0em 0.2em;
+                }
+
+
+                h2 {
+                    padding: 0.2em 1.7em 0.2em 1.7em;
+                    font-size: 1.5em;
+
+                    @include media-min("tablette") {
+                        padding: 0em 0.2em;
+                    }
+                }
+
+                p {
+                    margin: 0.4em;
+                    font-size: 1.2em;
+                    font-family: RobotoThin;
+                }
+
+                button {
+
+                    @media (min-width: 767px) {
+                        width: 80%;
+                        padding: 1em 0.2em;
+                        margin-bottom: 1.5em;
+                    }
+                }
+            }
+
+            &__fonctionnement {
+                display: flex;
+                flex-direction: column;
+                padding: 1.6em 1em 2em 1em;
+
+                @include media-min("tablette") {
+                    padding: 1em 0.2em;
+                    background-color: white;
+                    align-self: stretch;
+                }
+
+                h2 {
+                    padding-left: 1em;
+
+                    @include media-min("tablette") {
+                        margin: 0.3em 0em;
+                    }
+                }
+
+                ol {
+                    list-style: none;
+                    counter-reset: li;
+                    display: flex;
+                    flex-direction: column;
+                    padding: 1em;
+                    text-align: left;
+
+                    @include media-min("tablette") {
+                        margin-top: 0px;
+                    }
+                }
+
+                li::before {
+                    content: counter(li);
+                    color: red;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    min-width: 1.6em;
+                    min-height: 1.6em;
+                    background-color: $primary-color;
+                    border-radius: 50%;
+                    color: white;
+                    position: relative;
+                    right: 4%;
+                }
+
+                li {
+                    counter-increment: li;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color: $background-color;
+                    border-radius: 35px;
+                    padding: 1em 1em 1em 0em;
+                    margin-bottom: 0.8em;
+                    font-size: 1.5em;
+
+                    i {
+                        min-width: 26px;
+                        margin-right: 0.5em;
+                        margin-left: 0.3em;
+                        text-align: center;
+                        color: lighten(#2D2929,25%);
+                    }
+
+                    span {
+                        flex: 1;
+                        font-size: 0.75em;
+                    }
+                }
+
+                li:hover {
+                    background-color: lighten($primary-color,35%);
+                }
+
+                li:hover i {
+                    color: $primary-color;
+                }
+            }
+        }
+    }
+
+    .contener_restaurant {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-content: center;
+        background-color: #f2f2f2;
+        padding-bottom: 3em;
+
+        @include media-min("tablette") {
+            margin-left: 40.5%;
+            padding-bottom: 0em;
+        }
+
+        @include media-min-lanscape("tablette",landscape) {
+            margin-left: 0%;
+        }
+
+        @include media-min("tablette-down") {
+            margin-left: 0px;
+            width: 75%;
+        }
+
+        .restaurant {
+
+            h2 {
+                padding-left: 0.9em;
+
+                @include media-min("grand-mobile") {
+                    text-align: center;
+                }
+            }
+
+            &__vignettes {
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+                padding: 1.2em;
+
+                @include media-min("tablette") {
+                    padding-bottom: 0.2em;
+                    font-size: 0.8em;
+                }
+
+                @include media-min("grand-mobile") {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    padding: 0.5em;
+                }
+
+                @include media-min("ecran-xlarge") {
+                    justify-content: space-evenly;
+                }
+
+                &__detail {
+                    border-radius: 25px;
+                    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+                    margin-bottom: 1.7em;
+
+                    @include media-min("grand-mobile") {
+                        width: 49%;
+                    }
+
+                    @include media-min("ecran-xlarge") {
+                        width: 40%;
+                    }
+
+
+
+                    &__image {
+                        width: 100%;
+                        object-fit: cover;
+                        height: 160px;
+                        position: relative;
+
+                        @include media-min("tablette") {
+                            height: 240px;
+                        }
+
+                        @include media-min("grand-mobile") {
+                            height: 210px;
+                        }
+
+                        @include media-min("ecran-xlarge") {
+                            height: 310px;
+                        }
+
+
+                        img {
+                            width: 100%;
+                            height: 160px;
+                            position: absolute;
+                            z-index: 1;
+                            border-radius: 25px 25px 0px 0px;
+
+                            @include media-min("tablette") {
+                                height: 240px;
+                            }
+
+                            @include media-min("grand-mobile") {
+                                height: 210px;
+                            }
+
+                            @include media-min("ecran-xlarge") {
+                                height: 310px;
+                            }
+                        }
+
+                        &__new {
+                            position: absolute;
+                            z-index: 2;
+                            left: 72%;
+                            top: 10px;
+                            width: 20%;
+                            height: 15%;
+                            min-width: 63px;
+                            text-align: center;
+                            color: darken($tretiary-color,40%);
+                            background-color: $tretiary-color;
+
+                            @include media-min("tablette") {
+                                top: 30px;
+                                width: 28%;
+                                height: 22%;
+                                left: 64%;
+                            }
+
+                            @include media-min("grand-mobile") {
+                                width: 30%;
+                                left: 68%;
+                                height: 15%;
+                            }
+
+                            @include media-min("ecran-large") {
+                                width: 17%;
+                                left: 75%;
+                                height: 10%;
+                            }
+
+                            p {
+                                margin: 5%;
+
+                                @include media-min("tablette") {
+                                    margin: 12%;
+                                }
+
+                                @include media-min("grand-mobile") {
+                                    margin: 9%;
+                                    font-size: 0.75em;
+                                }
+                            }
+                        }
+                    }
+
+                    &__footer {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        align-items: center;
+                        padding-left: 1.6em;
+                        padding-right: 2.2em;
+
+                        @include media-min("grand-mobile") {
+                            font-size: 1.2em;
+                            padding-left: 0.3em;
+                            padding-right: 0.6em;
+                        }
+
+                        a {
+                            text-decoration: none;
+                            color: black;
+                            font-size: 1.1em;
+                        }
+
+                        &__text {
+
+                            h3 {
+                                margin: 0.3em 0em 0.5em 0em;
+                            }
+
+                            p {
+                                margin: 0.5em 0em 0.3em 0em;
+                            }
+
+                            @include media-min("tablette") {
+                                font-size: 0.9em;
+
+                                h3 {
+                                    margin: 0.3em 0em 0.3em 0em;
+                                }
+
+                                p {
+                                    margin: 0.3em 0em 0.3em 0em;
+                                }
+                            }
+                        }
+
+
+
+                        &__hearth {
+                            @include ajout-favori;
+
+                            @include media-min("tablette") {
+                                font-size: 1.6em;
+                            }
+
+                            @include media-min("grand-mobile") {
+                                font-size: 1.2em;
+                            }
+
+                            &__label .menu__entete__checkbox {
+                                width: 18%;
+
+                                :hover ~ i.fas.fa-heart {
+                                    display: inline-block;
+                                    transform: scale(1.1);
+                                    animation: fondu 2s forwards;
+                                    background: $background-radiant-button;
+                                    -webkit-background-clip: text;
+                                    -webkit-text-fill-color: transparent;
+                                }
+
+                                :hover ~ i.far.fa-heart {
+                                    display: none;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

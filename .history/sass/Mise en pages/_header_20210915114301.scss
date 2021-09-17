@@ -1,0 +1,72 @@
+.header {
+
+    &__principale {
+        width: 100%;
+        height: 2em;
+        background-color: white;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-content: center;
+        padding: 1em 0em;
+        position: sticky;
+        top: 0;
+        z-index: 3;
+
+        @include media-min("tablette") {
+            height: 4em;
+            padding: 0.2em 0em;
+        }
+    }
+
+    &__logo {
+        height: 26px;
+
+        @include media-min("tablette") {
+            height: 70%;
+            margin: auto;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        background-color: white;
+        z-index: 3;
+
+        @include media-min("tablette") {
+            height: 4em;
+            padding: 0.2em 0em;
+        }
+
+        &__retour {
+            text-decoration: none;
+            width: 10%;
+            text-align: center;
+
+            i {
+                color: black;
+            }
+        }
+
+
+        &__logo {
+            height: 2.8em;
+            width: 90%;
+            display: flex;
+            justify-items: center;
+            align-content: center;
+
+
+
+            img {
+                width: 30%;
+                margin: auto auto auto 30%;
+            }
+        }
+    }
+}
